@@ -1,5 +1,5 @@
 require_relative '../lib/changer.rb'
-require 'changer'
+require 'rspec'
 
 describe Changer do
     let(:changer) { Changer.new }
@@ -34,7 +34,8 @@ describe Changer do
     it 'returns 3 quarters for 75' do
         expect(changer.change(75)).to eq([25, 25, 25])
     end
-    it 'returns 3 quarters 2 dimes and 4 pennies for 99' do
-        expect(changer.change(99)).to eq([25, 25, 25, 10, 10, 1, 1, 1, 1])
+    
+    it 'returns 1 quarter, 1 nickel and 1 penny for 31' do
+        expect(changer.change(31)).to eq([25, 5, 1])
     end
 end
